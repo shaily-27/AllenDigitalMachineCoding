@@ -6,6 +6,7 @@ import com.shaily.allenDigital.demo.enums.VehicleType;
 import com.shaily.allenDigital.demo.request.OnBoardDriverRequest;
 import com.shaily.allenDigital.demo.request.OnBoardVehicleRequest;
 import com.shaily.allenDigital.demo.service.OnBoardingService;
+import com.shaily.allenDigital.demo.service.impl.BillingServiceImpl;
 import com.shaily.allenDigital.demo.service.impl.OnBoardingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,7 @@ public class DemoApplication {
 
 		System.out.println("Hello world!");
 		OnBoardingServiceImpl onBoardingService = new OnBoardingServiceImpl();
+		BillingServiceImpl billingService = new BillingServiceImpl();
 
 		//Onboard driver
 		Map<String, String> driverDetails = new HashMap<>();
@@ -36,8 +38,14 @@ public class DemoApplication {
 		Vehicle vehicle1 = new Vehicle("KA-01-2222", vehicleDetails, VehicleType.ECONOMY);
 		onBoardingService.onBoardVehicle(new OnBoardVehicleRequest(vehicle1));
 
+		//Add driver cancellation count
+		driver1.setDriverCancelledTrips(2);
+		//Add customer cancellation count
+		driver1.setCustomerCancelledTrips(3);
+
 		//GetBill
-		}
+		Double bill = billingService.getBill(driver1);
+		System.out.println("Bill for driver1 with details : " + driver1.toString() + " is : " + bill);
 
 	}
 

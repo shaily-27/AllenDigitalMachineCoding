@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @NoArgsConstructor
-@AllArgsConstructor
 public class OnBoardingServiceImpl implements OnBoardingService {
     private DriverRepository driverRepository;
     private VehicleRepository vehicleRepository;

@@ -19,13 +19,15 @@ public class Driver {
     private String id;
     private Map<String, String> contactDetails;
     private Boolean ownsVehicle;
-    private String vehicleAssigned;
+    private Vehicle vehicleAssigned;
     private Double distanceDriven;
     private Integer driverCancelledTrips;
     private Integer customerCancelledTrips;
 
     public  Driver(String name, Map<String, String> contactDetails, String vehicle) {
-        Driver driver = new Driver.DriverBuilder().name(name).contactDetails(contactDetails).vehicleAssigned(vehicle).build();
+        this.name = name;
+        this.contactDetails = contactDetails;
+        this.vehicleAssigned = new Vehicle(vehicle);
     }
 
 }

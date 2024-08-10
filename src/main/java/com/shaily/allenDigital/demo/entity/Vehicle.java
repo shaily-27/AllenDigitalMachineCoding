@@ -22,6 +22,12 @@ public class Vehicle {
     private Driver driverAssigned;
 
     public Vehicle(String vehicleId, Map<String, String> vehicleDetails, VehicleType vehicleType) {
-        Vehicle vehicle = new VehicleBuilder().id(vehicleId).vehicleDetails(vehicleDetails).type(vehicleType).build();
+        this.id=vehicleId;
+        this.vehicleDetails=vehicleDetails;
+        this.type=vehicleType;
+    }
+
+    public Vehicle(String vehicleId) {
+        Vehicle vehicle = new VehicleBuilder().id(vehicleId).build();
     }
 }

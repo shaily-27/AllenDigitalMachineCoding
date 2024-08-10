@@ -20,4 +20,8 @@ public class Vehicle {
     private String id;
     private Map<String, String> vehicleDetails;
     private Driver driverAssigned;
+
+    public Vehicle(String vehicleId, Map<String, String> vehicleDetails, VehicleType vehicleType) {
+        Vehicle vehicle = new VehicleBuilder().id(vehicleId).vehicleDetails(vehicleDetails).type(vehicleType).build();
+    }
 }

@@ -5,10 +5,14 @@ import com.shaily.allenDigital.demo.database.VehicleRepository;
 import com.shaily.allenDigital.demo.request.OnBoardDriverRequest;
 import com.shaily.allenDigital.demo.request.OnBoardVehicleRequest;
 import com.shaily.allenDigital.demo.service.OnBoardingService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@NoArgsConstructor
+@AllArgsConstructor
 public class OnBoardingServiceImpl implements OnBoardingService {
     private DriverRepository driverRepository;
     private VehicleRepository vehicleRepository;
